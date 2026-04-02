@@ -246,16 +246,7 @@ select option{background:#1a1e2e;}
         <div class="greet-icon" id="greet-emoji">🌅</div>
       </div>
 
-      <!-- FIREBASE SETUP GUIDE -->
-      <div class="setup-banner" id="setup-banner">
-        <strong>⚙️ Firebase Setup Zaroori Hai!</strong><br>
-        Neeche script mein apna Firebase config daalo:<br>
-        1. <strong>console.firebase.google.com</strong> pe jao<br>
-        2. New project banao → Web app add karo<br>
-        3. Config copy karo aur <code>YOUR_API_KEY</code> etc replace karo<br>
-        4. Firestore Database enable karo (test mode)<br>
-        5. Authentication → Email/Password + Google enable karo
-      </div>
+      
 
       <div class="cards-row">
         <div class="stat-card ci"><div class="stat-label">Total Income</div><div class="stat-value sg" id="d-inc">₹0</div><div class="stat-sub">All time</div></div>
@@ -398,7 +389,7 @@ select option{background:#1a1e2e;}
 
     <!-- BALANCE SHEET -->
     <div class="page" id="pg-balancesheet">
-      <div class="page-header"><h2>Balance Sheet</h2><p>Assets = Liabilities + Capital</p></div>
+      <div class="page-header"><h2>Balance Sheet</h2><p>Assets = Liabilities + Captal</p></div>
       <div class="bs-grid">
         <div class="bs-side">
           <div class="bs-title bsl">⬅ Liabilities &amp; Capital</div>
@@ -528,12 +519,6 @@ auth.onAuthStateChanged(function(user){
     el('user-name').textContent=name;
     el('user-email').textContent=user.email;
     el('user-avatar').textContent=name.charAt(0).toUpperCase();
-    // Check if firebase is configured
-    if(firebaseConfig.apiKey==='YOUR_API_KEY'){
-      el('setup-banner').style.display='block';
-    } else {
-      el('setup-banner').style.display='none';
-    }
     loadAllData();
   } else {
     uid=null;
